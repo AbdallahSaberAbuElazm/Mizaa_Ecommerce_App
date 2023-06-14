@@ -210,15 +210,22 @@ class OfferDescriptionPage extends GetView<OfferController> {
                   borderRadius: BorderRadius.circular(12),
                 )),
             onPressed: () {},
-            child: Text(
-              SharedPreferencesClass.getLanguageCode() == 'ar'
-                  ? 'أضف إلى العربة'
-                  : 'Add to cart',
-              style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontFamily: 'Noto Kufi Arabic',
-                  fontWeight: FontWeight.w600),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Icon(Icons.shopping_cart_rounded,color: Colors.white,size: 30,),
+                const SizedBox(width: 6,),
+                Text(
+                  SharedPreferencesClass.getLanguageCode() == 'ar'
+                      ? 'أضف إلى العربة'
+                      : 'Add to cart',
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontFamily: 'Noto Kufi Arabic',
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
             )));
   }
 

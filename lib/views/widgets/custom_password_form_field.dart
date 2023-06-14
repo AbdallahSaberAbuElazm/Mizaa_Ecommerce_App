@@ -18,7 +18,6 @@ class CustomPasswordFormField extends StatefulWidget {
 
 class _CustomPasswordFormFieldState extends State<CustomPasswordFormField> {
   bool _passwordVisible = false;
-  String _passwordErrorText = '';
 
   @override
   void initState() {
@@ -35,13 +34,13 @@ class _CustomPasswordFormFieldState extends State<CustomPasswordFormField> {
   void _validatePassword(String password) {
     if (password.length < 4) {
       setState(() {
-        _passwordErrorText = SharedPreferencesClass.getLanguageCode() == 'ar'
+        Controllers.userAuthenticationController.passwordErrorText.value = SharedPreferencesClass.getLanguageCode() == 'ar'
             ? 'يجب أن تكون كلمة المرور على الأقل 4 أحرف'
             : 'Password must be at least 4 characters long.';
       });
     } else {
       setState(() {
-        _passwordErrorText = '';
+        Controllers.userAuthenticationController.passwordErrorText.value = '';
       });
     }
   }
@@ -84,11 +83,11 @@ class _CustomPasswordFormFieldState extends State<CustomPasswordFormField> {
               border: OutlineInputBorder(
                   borderSide:
                       BorderSide(color: ColorConstants.greyColor, width: 1),
-                  borderRadius: const BorderRadius.all(Radius.circular(8))),
+                  borderRadius: const BorderRadius.all(Radius.circular(12))),
               focusedBorder: OutlineInputBorder(
                   borderSide:
                       BorderSide(color: ColorConstants.greyColor, width: 1),
-                  borderRadius: const BorderRadius.all(Radius.circular(8))),
+                  borderRadius: const BorderRadius.all(Radius.circular(12))),
               // errorText: _passwordErrorText,
               hintText: widget.hintText,
               hintStyle: Theme.of(context).textTheme.subtitle2,
@@ -118,7 +117,7 @@ class _CustomPasswordFormFieldState extends State<CustomPasswordFormField> {
         ),
         (widget.controller.text.isNotEmpty && widget.controller.text.length < 4)
             ? Text(
-                _passwordErrorText,
+          Controllers.userAuthenticationController.passwordErrorText.value,
                 style: const TextStyle(
                     color: ColorConstants.mainColor, fontSize: 11),
               )

@@ -137,9 +137,9 @@ class _OfferListForSubCategoryPageState
               widget.mainCategoryName,
               style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 16,
+                  fontSize: 15,
                   fontFamily: 'Noto Kufi Arabic',
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.bold),
             ),
           ],
         ),

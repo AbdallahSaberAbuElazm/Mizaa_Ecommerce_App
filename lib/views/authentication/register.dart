@@ -153,7 +153,7 @@ class Register extends GetView<UserAuthenticationController> {
           textColor: Colors.white,
           textSize: 17,
           btnBackgroundColor: ColorConstants.mainColor,
-          btnOnpressed:(controller.isButtonEnabled.value == true && Controllers.userAuthenticationController.isChecked.value == true)? () async {
+          btnOnpressed:(controller.isButtonEnabled.value == true && Controllers.userAuthenticationController.isChecked.value == true &&  Controllers.userAuthenticationController.passwordErrorText.isEmpty)? () async {
             if(_formKey.currentState!.validate() ){
 
                   showDialog(context: context, builder: (context)=>const Center(child:  CircularProgressIndicator(color: ColorConstants.mainColor,)));

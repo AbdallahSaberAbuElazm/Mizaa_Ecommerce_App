@@ -136,7 +136,7 @@ class RecoverPassword extends GetView<UserAuthenticationController> {
           textColor: Colors.white,
           textSize: 17,
           btnBackgroundColor: ColorConstants.mainColor,
-          btnOnpressed: (controller.isButtonEnabled.value)
+          btnOnpressed: (controller.isButtonEnabled.value && Controllers.userAuthenticationController.passwordErrorText.isEmpty)
               ? () async {
                   if (_formKey.currentState!.validate()) {
                     showDialog(

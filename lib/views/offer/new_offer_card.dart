@@ -145,7 +145,7 @@ class _NewOfferCardState extends State<NewOfferCard> {
                                   ? companyModel.arName.toString()
                                   : companyModel.enName.toString(),
                               style: TextStyle(
-                                  fontSize: 13, color: ColorConstants.greyColor),
+                                  fontSize: 13, color: ColorConstants.greyColor,fontWeight: FontWeight.w500),
                             ),
                           ),
                           Container(
@@ -171,7 +171,7 @@ class _NewOfferCardState extends State<NewOfferCard> {
                             ? widget.offerModel.arTitle.toString()
                             : widget.offerModel.enTitle.toString(),
                         style: TextStyle(
-                            fontSize: 12, color: ColorConstants.black0,height: 1.2),
+                            fontSize: 12, color: ColorConstants.black0,height: 1.2,fontWeight: FontWeight.bold),
                       ),
                     ),
                     const SizedBox(height: 3,),

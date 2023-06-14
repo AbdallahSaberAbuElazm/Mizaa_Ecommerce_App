@@ -64,9 +64,9 @@ class _CustomConfirmPasswordFormFieldState extends State<CustomConfirmPasswordFo
                 focusColor: Colors.black,
                 hoverColor: Colors.black,
                 border:  OutlineInputBorder(borderSide:BorderSide(color:
-                (Controllers.directionalityController.isPasswordAndConfirmPasswordMatched.value)? ColorConstants.greyColor: ColorConstants.mainColor,width: 1 ),borderRadius: const BorderRadius.all(Radius.circular(8))),
+                (Controllers.directionalityController.isPasswordAndConfirmPasswordMatched.value)? ColorConstants.greyColor: ColorConstants.mainColor,width: 1 ),borderRadius: const BorderRadius.all(Radius.circular(12))),
                 focusedBorder:
-                OutlineInputBorder(borderSide: BorderSide(color: (Controllers.directionalityController.isPasswordAndConfirmPasswordMatched.value)? ColorConstants.greyColor: ColorConstants.mainColor,width: 1 ),borderRadius: const BorderRadius.all(Radius.circular(8))),
+                OutlineInputBorder(borderSide: BorderSide(color: (Controllers.directionalityController.isPasswordAndConfirmPasswordMatched.value)? ColorConstants.greyColor: ColorConstants.mainColor,width: 1 ),borderRadius: const BorderRadius.all(Radius.circular(12))),
 
                 hintText: widget.hintText,
                 hintStyle: Theme.of(context).textTheme.subtitle2,

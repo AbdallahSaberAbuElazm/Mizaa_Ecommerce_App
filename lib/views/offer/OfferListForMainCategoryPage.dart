@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_ecommerce_app/controllers/home/HomeController.dart';
@@ -5,7 +7,6 @@ import 'package:test_ecommerce_app/controllers/offers/OfferController.dart';
 import 'package:test_ecommerce_app/models/offers/OfferModel.dart';
 import 'package:test_ecommerce_app/shared/constants/ColorConstants.dart';
 import 'package:test_ecommerce_app/shared/shared_preferences.dart';
-import 'package:test_ecommerce_app/controllers/controllers.dart';
 import 'package:test_ecommerce_app/shared/utils.dart';
 import 'package:test_ecommerce_app/views/widgets/shimmer_container.dart';
 import 'package:test_ecommerce_app/views/offer/OfferCard.dart';
@@ -30,6 +31,7 @@ class _OfferListForMainCategoryPageState
   @override
   void initState() {
     super.initState();
+
     _tabController = TabController(length: 2, vsync: this);
   }
 
@@ -56,7 +58,7 @@ class _OfferListForMainCategoryPageState
           left: SharedPreferencesClass.getLanguageCode() == 'ar' ? 16 : 0),
               child: _buildActionsAppBar(context: context),
             )],
-            bottom:  TabBar(padding: EdgeInsets.only(left: 16,right: 16),
+            bottom:  TabBar(padding: const EdgeInsets.only(left: 16,right: 16),
               controller: _tabController,
               labelColor: ColorConstants.mainColor, // Change the selected tab text color
               unselectedLabelColor: ColorConstants.black0, // Change the unselected tab text color
@@ -138,9 +140,9 @@ class _OfferListForMainCategoryPageState
               widget.mainCategoryName,
               style: const TextStyle(
                   color: Colors.black,
-                  fontSize: 16,
+                  fontSize: 15,
                   fontFamily: 'Noto Kufi Arabic',
-                  fontWeight: FontWeight.w600),
+                  fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -170,6 +172,18 @@ class OfferTab extends StatefulWidget {
 class _OfferTabState extends State<OfferTab> {
   final HomeController homeController = Get.find();
   @override
+  void initState() {
+
+    homeController.isLoadingOffersMainCategory.value = true;
+    // Timer(const Duration(minutes: 800), () { // <-- Delay here
+    //   setState(() {
+    //     homeController.isLoadingOffersMainCategory.value = true;
+    //   });
+    // });
+    super.initState();
+
+  }
+  @override
   Widget build(BuildContext context) {
     return
 Padding(padding: const EdgeInsets.only(left: 16, right: 16,bottom: 5),child:
@@ -179,8 +193,10 @@ Padding(padding: const EdgeInsets.only(left: 16, right: 16,bottom: 5),child:
   }
 
   Widget _buildListOfOffers() {
-    return  Obx(() => homeController.isLoadingOffersMainCategory.value
-            ? ListView.builder(
+    return  Obx(() =>
+    homeController.isLoadingOffersMainCategory.value == false
+            ?
+    ListView.builder(
 
           itemCount: 2,
           itemBuilder: (context, index) => Padding(

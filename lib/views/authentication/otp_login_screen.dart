@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_ecommerce_app/controllers/controllers.dart';
 import 'package:test_ecommerce_app/controllers/user/user_authentication_controller.dart';
 import 'package:test_ecommerce_app/shared/constants/ColorConstants.dart';
 import 'package:test_ecommerce_app/shared/shared_preferences.dart';
@@ -92,7 +93,7 @@ class OTPLoginScreen extends GetView<UserAuthenticationController> {
           textColor: Colors.white,
           textSize: 17,
           btnBackgroundColor: ColorConstants.mainColor,
-          btnOnpressed: (controller.isButtonEnabled.value)
+          btnOnpressed: (controller.isButtonEnabled.value && Controllers.userAuthenticationController.passwordErrorText.isEmpty)
               ? () {
                   if (_formKey.currentState!.validate()) {
                     showDialog(

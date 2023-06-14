@@ -19,6 +19,8 @@ class UserAuthenticationController extends GetxController {
   final TextEditingController confirmPasswordController =
       TextEditingController();
 
+  final passwordErrorText = ''.obs;
+
   // agree policy for register page
   final isChecked = false.obs;
 
@@ -73,15 +75,16 @@ class UserAuthenticationController extends GetxController {
   void updateButtonStateRegisterScreen() {
     isButtonEnabled.value = phoneNumberController.text.isNotEmpty && phoneNumberController.text.length == selectedCountryPhoneLength.value  &&
         passwordController.text.isNotEmpty &&
-        confirmPasswordController.text.isNotEmpty && passwordController.text.isNotEmpty ==
-        confirmPasswordController.text.isNotEmpty &&
+        confirmPasswordController.text.isNotEmpty && passwordController.text ==
+        confirmPasswordController.text &&
         firstNameController.text.isNotEmpty;
   }
 
   void updateButtonStateRecoveryScreen() {
     isButtonEnabled.value = phoneNumberController.text.isNotEmpty && phoneNumberController.text.length == selectedCountryPhoneLength.value  &&
         passwordController.text.isNotEmpty &&
-        confirmPasswordController.text.isNotEmpty;
+        confirmPasswordController.text.isNotEmpty && passwordController.text ==
+        confirmPasswordController.text;
   }
 
   ///////////

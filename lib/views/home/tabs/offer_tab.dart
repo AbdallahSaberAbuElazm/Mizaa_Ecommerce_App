@@ -237,7 +237,6 @@ class ExploreTab extends GetView<HomeController> {
   }
 
   ////////////////////////////////////////////////
-
   Widget _buildAppBar({required BuildContext context}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -568,45 +567,48 @@ class ExploreTab extends GetView<HomeController> {
                     'assets/images/cashback_background.png',
                   ),
                   fit: BoxFit.cover)),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                SharedPreferencesClass.getLanguageCode() == 'ar'
-                    ? 'استرجاع نقدي 2% على كل مشترياتك'
-                    : '2% cash back on all your purchases',
-                style: TextStyle(
-                    color: ColorConstants.black0,
-                    fontSize: 14.5,
-                    height: 1.4,
-                    fontWeight: FontWeight.w500),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              SizedBox(
-                  width: 120,
-                  height: 27,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          )),
-                      onPressed: () {},
-                      child: Text(
-                        SharedPreferencesClass.getLanguageCode() == 'ar'
-                            ? 'استخدم الآن'
-                            : 'Use now',
-                        style: const TextStyle(
-                            color: ColorConstants.mainColor,
-                            fontSize: 12,
-                            fontFamily: 'Noto Kufi Arabic',
-                            fontWeight: FontWeight.w600),
-                      )))
-            ],
+          child: Directionality(
+            textDirection:TextDirection.rtl,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  SharedPreferencesClass.getLanguageCode() == 'ar'
+                      ? 'استرجاع نقدي 2% على كل مشترياتك'
+                      : '2% cash back on all your purchases',
+                  style: TextStyle(
+                      color: ColorConstants.black0,
+                      fontSize: 14.5,
+                      height: 1.4,
+                      fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                SizedBox(
+                    width: 120,
+                    height: 27,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            elevation: 0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            )),
+                        onPressed: () {},
+                        child: Text(
+                          SharedPreferencesClass.getLanguageCode() == 'ar'
+                              ? 'استخدم الآن'
+                              : 'Use now',
+                          style: const TextStyle(
+                              color: ColorConstants.mainColor,
+                              fontSize: 12,
+                              fontFamily: 'Noto Kufi Arabic',
+                              fontWeight: FontWeight.w600),
+                        )))
+              ],
+            ),
           ),
         ),
         Padding(
@@ -657,9 +659,9 @@ class ExploreTab extends GetView<HomeController> {
                     bottom: 50,
                     left: SharedPreferencesClass.getLanguageCode() == 'ar'
                         ? 0
-                        : 20,
+                        : 16,
                     right: SharedPreferencesClass.getLanguageCode() == 'ar'
-                        ? 20
+                        ? 16
                         : 0),
                 child: Align(
                   alignment: Alignment.bottomLeft,
@@ -675,7 +677,7 @@ class ExploreTab extends GetView<HomeController> {
                             color: Colors.white,
                             fontSize: 10,
                             fontFamily: 'Noto Kufi Arabic',
-                            fontWeight: FontWeight.w500),
+                            fontWeight: FontWeight.w700),
                       ),
                       const SizedBox(
                         height: 3,
@@ -871,7 +873,7 @@ class ExploreTab extends GetView<HomeController> {
                                                   .copyWith(
                                                       fontSize: 13.0,
                                                       fontWeight:
-                                                          FontWeight.w600,
+                                                          FontWeight.bold,
                                                       color: Colors.white)),
                                         ),
                                       ),
@@ -1034,7 +1036,7 @@ class ExploreTab extends GetView<HomeController> {
                           textAlign: Controllers
                               .directionalityController.textAlign.value,
                           style: theme.textTheme.subtitle1?.copyWith(
-                              color: Colors.white, fontSize: 13.0, height: 1.2),
+                              color: Colors.white, fontSize: 13.0, height: 1.2, fontWeight:FontWeight.bold),
                         ),
                       ],
                     ),
@@ -1062,8 +1064,8 @@ class ExploreTab extends GetView<HomeController> {
             borderRadius: BorderRadius.circular(12),
           ),
           margin: EdgeInsets.only(
-              right: SharedPreferencesClass.getLanguageCode() == 'ar' ? 20 : 0,
-              left: SharedPreferencesClass.getLanguageCode() == 'ar' ? 0 : 20),
+              right: SharedPreferencesClass.getLanguageCode() == 'ar' ? 16 : 0,
+              left: SharedPreferencesClass.getLanguageCode() == 'ar' ? 0 : 16),
           child: Stack(
             children: [
               Container(
@@ -1103,7 +1105,7 @@ class ExploreTab extends GetView<HomeController> {
                           textAlign: Controllers
                               .directionalityController.textAlign.value,
                           style: theme.textTheme.subtitle1?.copyWith(
-                              color: Colors.white, fontSize: 10.0, height: 1.2),
+                              color: Colors.white, fontSize: 9.5, height: 1.2,fontWeight:FontWeight.bold),
                         ),
                         Container(
                           width: 112,

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_ecommerce_app/shared/helpers/extensions/StringExtension.dart';
 import 'package:test_ecommerce_app/shared/shared_preferences.dart';
-import 'package:test_ecommerce_app/controllers/controllers.dart';
 import 'package:test_ecommerce_app/shared/utils.dart';
 
 class UserTab extends StatefulWidget {

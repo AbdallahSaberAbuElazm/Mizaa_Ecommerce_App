@@ -155,7 +155,7 @@ class _MostSellerOfferCardState extends State<MostSellerOfferCard> {
                               ? companyModel.arName.toString()
                               : companyModel.enName.toString(),
                           style: TextStyle(
-                              fontSize: 13, color: ColorConstants.greyColor),
+                              fontSize: 13, color: ColorConstants.greyColor,fontWeight: FontWeight.w500),
                         ),
                       ),
                       const SizedBox(height: 7,),
@@ -167,7 +167,7 @@ class _MostSellerOfferCardState extends State<MostSellerOfferCard> {
                               ? widget.offerModel.arTitle.toString()
                               : widget.offerModel.enTitle.toString(),
                           style: TextStyle(
-                              fontSize: 12, color: ColorConstants.black0,height: 1.2),
+                              fontSize: 12, color: ColorConstants.black0,height: 1.2,fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
