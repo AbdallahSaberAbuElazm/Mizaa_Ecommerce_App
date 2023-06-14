@@ -1,0 +1,121 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'OfferModel.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$_OfferModel _$$_OfferModelFromJson(Map<String, dynamic> json) =>
+    _$_OfferModel(
+      id: json['id'] as int?,
+      key: json['key'] as String?,
+      arTitle: json['arTitle'] as String?,
+      enTitle: json['enTitle'] as String?,
+      arSubtitle: json['arSubtitle'] as String?,
+      enSubtitle: json['enSubtitle'] as String?,
+      arDiscrict: json['arDiscrict'] as String?,
+      enDiscrict: json['enDiscrict'] as String?,
+      arAddress: json['arAddress'] as String?,
+      enAddress: json['enAddress'] as String?,
+      arDiscount: (json['arDiscount'] as num?)?.toDouble(),
+      enDiscount: (json['enDiscount'] as num?)?.toDouble(),
+      priceBeforDiscount: (json['priceBeforDiscount'] as num?)?.toDouble(),
+      priceAfterDiscount: (json['priceAfterDiscount'] as num?)?.toDouble(),
+      arFeatures: json['arFeatures'] as String?,
+      enFeatures: json['enFeatures'] as String?,
+      arConditions: json['arConditions'] as String?,
+      enConditions: json['enConditions'] as String?,
+      arOfferDuration: json['arOfferDuration'] as String?,
+      enOfferDuration: json['enOfferDuration'] as String?,
+      companyId: json['companyId'] as int?,
+      arCommunications: json['arCommunications'] as String?,
+      enCommunications: json['enCommunications'] as String?,
+      isSpecialOffer: json['isSpecialOffer'] as bool?,
+      arAttentionMessgae: json['arAttentionMessgae'] as String?,
+      enAttentionMessgae: json['enAttentionMessgae'] as String?,
+      creationDate: json['creationDate'] == null
+          ? null
+          : DateTime.parse(json['creationDate'] as String),
+      expireDate: json['expireDate'] == null
+          ? null
+          : DateTime.parse(json['expireDate'] as String),
+      cityId: json['cityId'] as int?,
+      city: json['city'],
+      mainImage: json['mainImage'] as String?,
+      image: json['image'],
+      companyLogoImage: json['companyLogoImage'],
+      latitude: json['latitude'],
+      longitude: json['longitude'],
+      subCategoryId: json['subCategoryId'] as int?,
+      salesCount: json['salesCount'] as int?,
+      company: json['company'] as Map<String, dynamic>?,
+      offerImages: (json['offerImages'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
+      offerOptions: (json['offerOptions'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
+      subCategory: json['subCategory'] as Map<String, dynamic>?,
+      userOfferActionHistories: json['userOfferActionHistories'],
+      isShowInHomePage: json['isShowInHomePage'] as bool?,
+      isTodayOffer: json['isTodayOffer'] as bool?,
+      isNewest: json['isNewest'] as bool?,
+      isMostSales: json['isMostSales'] as bool?,
+      isSpecial: json['isSpecial'] as bool?,
+      offerRate: (json['offerRate'] as num?)?.toDouble(),
+      offerRates: json['offerRates'],
+    );
+
+Map<String, dynamic> _$$_OfferModelToJson(_$_OfferModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'key': instance.key,
+      'arTitle': instance.arTitle,
+      'enTitle': instance.enTitle,
+      'arSubtitle': instance.arSubtitle,
+      'enSubtitle': instance.enSubtitle,
+      'arDiscrict': instance.arDiscrict,
+      'enDiscrict': instance.enDiscrict,
+      'arAddress': instance.arAddress,
+      'enAddress': instance.enAddress,
+      'arDiscount': instance.arDiscount,
+      'enDiscount': instance.enDiscount,
+      'priceBeforDiscount': instance.priceBeforDiscount,
+      'priceAfterDiscount': instance.priceAfterDiscount,
+      'arFeatures': instance.arFeatures,
+      'enFeatures': instance.enFeatures,
+      'arConditions': instance.arConditions,
+      'enConditions': instance.enConditions,
+      'arOfferDuration': instance.arOfferDuration,
+      'enOfferDuration': instance.enOfferDuration,
+      'companyId': instance.companyId,
+      'arCommunications': instance.arCommunications,
+      'enCommunications': instance.enCommunications,
+      'isSpecialOffer': instance.isSpecialOffer,
+      'arAttentionMessgae': instance.arAttentionMessgae,
+      'enAttentionMessgae': instance.enAttentionMessgae,
+      'creationDate': instance.creationDate?.toIso8601String(),
+      'expireDate': instance.expireDate?.toIso8601String(),
+      'cityId': instance.cityId,
+      'city': instance.city,
+      'mainImage': instance.mainImage,
+      'image': instance.image,
+      'companyLogoImage': instance.companyLogoImage,
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'subCategoryId': instance.subCategoryId,
+      'salesCount': instance.salesCount,
+      'company': instance.company,
+      'offerImages': instance.offerImages,
+      'offerOptions': instance.offerOptions,
+      'subCategory': instance.subCategory,
+      'userOfferActionHistories': instance.userOfferActionHistories,
+      'isShowInHomePage': instance.isShowInHomePage,
+      'isTodayOffer': instance.isTodayOffer,
+      'isNewest': instance.isNewest,
+      'isMostSales': instance.isMostSales,
+      'isSpecial': instance.isSpecial,
+      'offerRate': instance.offerRate,
+      'offerRates': instance.offerRates,
+    };
